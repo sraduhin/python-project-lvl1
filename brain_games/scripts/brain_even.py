@@ -22,7 +22,6 @@ def game():
 
 
 def main():
-    rounds = 3
     """Welcome to the Brain Games!
         May I have your name? Bill
         Hello, Bill!
@@ -33,17 +32,17 @@ def main():
     name = welcome_user()
 
     print('Answer "yes" if the number is even, otherwise answer "no".')
-    for round in rounds:
+    for _ in range(3):
         (question, answer) = game()
         correct_answer = 'yes' if is_Even(question) else 'no'
         if answer == correct_answer:
             print('Correct!')
         else:
-            print(f'{answer} is wrong answer ;(. \
-                Correct answer was {correct_answer}. Let\'s try again, Bill!')
+            print(f'\'{answer}\' is wrong answer ;(. \
+Correct answer was \'{correct_answer}\'. \nLet\'s try again, {name}!')
             return
-        print(f'Congratulations, {name}')
-        return
+    print(f'Congratulations, {name}!')
+    return
 
 
 if __name__ == '__main__':
