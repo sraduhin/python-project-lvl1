@@ -12,15 +12,16 @@ def is_prime(value):
     return True
 
 
-description = 'Answer "yes" if the number is prime, otherwise answer "no".'
+DESCRIPTION = 'Answer "yes" if the number is prime, otherwise answer "no".'
 
 
-def game():
-    question = random.randint(0, 100)
+def generate_round():
+    range = (0, 100)
+    (start, end) = range
+    question = random.randint(start, end)
     correct_answer = 'yes' if is_prime(question) else 'no'
     return question, correct_answer
 
 
 def main():
-    engine(description, game)
-    return
+    engine(DESCRIPTION, generate_round)

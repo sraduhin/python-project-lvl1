@@ -7,7 +7,8 @@ def engine(game_description, game):
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}')
     print(game_description)
-    for _ in range(3):
+    rounds_count = 3
+    for _ in range(rounds_count):
         question, correct_answer = game()
         print(f'Question: {question}')
         answer = prompt.string('Your answer: ')
@@ -18,7 +19,6 @@ def engine(game_description, game):
 Correct answer was \'{correct_answer}\'. \nLet\'s try again, {name}!')
             return
     print(f'Congratulations, {name}!')
-    return
 
 
 if __name__ == "__main__":

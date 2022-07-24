@@ -17,13 +17,19 @@ def get_correct_answer(value1, value2):
     return get_correct_answer(value2, value1 % value2)
 
 
-description = 'What number is missing in the progression?'
+DESCRIPTION = 'What number is missing in the progression?'
 
 
-def game():
-    start_value = random.randint(0, 100)
-    step_progression = random.randint(1, 9)
-    length_progression = random.randint(6, 10)
+def generate_round():
+    range_first_element_of_progression = (0, 100)
+    range_ster_progression = (1, 9)
+    range_length_progression = (6, 10)
+    (start, end) = range_first_element_of_progression
+    start_value = random.randint(start, end)
+    (start, end) = range_ster_progression
+    step_progression = random.randint(start, end)
+    (start, end) = range_length_progression
+    length_progression = random.randint(start, end)
     hidden_index = random.randint(0, length_progression - 1)
     progression = make_progression(start_value, step_progression,
                                    length_progression)
@@ -33,5 +39,4 @@ def game():
 
 
 def main():
-    engine(description, game)
-    return
+    engine(DESCRIPTION, generate_round)

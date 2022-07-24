@@ -14,13 +14,15 @@ def get_correct_answer(value1, value2, operation):
         raise ValueError(f'operation {operation} is not supported')
 
 
-description = 'What is the result of the expression?'
+DESCRIPTION = 'What is the result of the expression?'
 
 
-def game():
-    random_value1 = random.randint(0, 50)
-    random_value2 = random.randint(0, 10)
-    random_operator = '+-*'[random.randint(0, 2)]
+def generate_round():
+    range = (0, 100)
+    (start, end) = range
+    random_value1 = random.randint(start, end)
+    random_value2 = random.randint(start, end)
+    random_operator = random.choice(['+', '-', '*'])
     question = f'{random_value1} {random_operator} {random_value2}'
     correct_answer = str(get_correct_answer(random_value1, random_value2,
                                             random_operator))
@@ -28,5 +30,4 @@ def game():
 
 
 def main():
-    engine(description, game)
-    return
+    engine(DESCRIPTION, generate_round)
