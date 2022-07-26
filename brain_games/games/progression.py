@@ -21,14 +21,16 @@ DESCRIPTION = 'What number is missing in the progression?'
 
 
 def generate_round():
-    range_first_element_of_progression = (0, 100)
-    range_ster_progression = (1, 9)
-    range_length_progression = (6, 10)
-    (start, end) = range_first_element_of_progression
+
+    RANGE_FIRST_ELEMENT_OF_PROGRESSION = (0, 100)
+    RANGE_STEP_PROGRESSION = (1, 9)
+    RANGE_LENGTH_PROGRESSION = (6, 10)
+
+    (start, end) = RANGE_FIRST_ELEMENT_OF_PROGRESSION
     start_value = random.randint(start, end)
-    (start, end) = range_ster_progression
+    (start, end) = RANGE_STEP_PROGRESSION
     step_progression = random.randint(start, end)
-    (start, end) = range_length_progression
+    (start, end) = RANGE_LENGTH_PROGRESSION
     length_progression = random.randint(start, end)
     hidden_index = random.randint(0, length_progression - 1)
     progression = make_progression(start_value, step_progression,

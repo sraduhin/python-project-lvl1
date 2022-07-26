@@ -7,7 +7,11 @@ DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
 def generate_round():
-    question = random.randint(0, 100)
+
+    RANGE = (0, 100)
+
+    (start, end) = RANGE
+    question = random.randint(start, end)
     correct_answer = 'yes' if question % 2 == 0 else 'no'
     return question, correct_answer
 

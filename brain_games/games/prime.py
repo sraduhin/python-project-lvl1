@@ -16,8 +16,10 @@ DESCRIPTION = 'Answer "yes" if the number is prime, otherwise answer "no".'
 
 
 def generate_round():
-    range = (0, 100)
-    (start, end) = range
+
+    RANGE = (0, 100)
+
+    (start, end) = RANGE
     question = random.randint(start, end)
     correct_answer = 'yes' if is_prime(question) else 'no'
     return question, correct_answer

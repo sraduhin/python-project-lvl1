@@ -18,8 +18,10 @@ DESCRIPTION = 'What is the result of the expression?'
 
 
 def generate_round():
-    range = (0, 100)
-    (start, end) = range
+
+    RANGE = (0, 100)
+
+    (start, end) = RANGE
     random_value1 = random.randint(start, end)
     random_value2 = random.randint(start, end)
     random_operator = random.choice(['+', '-', '*'])
