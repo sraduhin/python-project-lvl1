@@ -3,6 +3,12 @@ import random
 from brain_games.engine import engine
 
 
+RANGE_FIRST_ELEMENT_OF_PROGRESSION = (0, 100)
+RANGE_STEP_PROGRESSION = (1, 9)
+RANGE_LENGTH_PROGRESSION = (6, 10)
+DESCRIPTION = 'What number is missing in the progression?'
+
+
 def make_progression(first_element, step, length):
     progression = []
     for i in range(length):
@@ -15,12 +21,6 @@ def get_correct_answer(value1, value2):
     if value2 == 0:
         return value1
     return get_correct_answer(value2, value1 % value2)
-
-
-RANGE_FIRST_ELEMENT_OF_PROGRESSION = (0, 100)
-RANGE_STEP_PROGRESSION = (1, 9)
-RANGE_LENGTH_PROGRESSION = (6, 10)
-DESCRIPTION = 'What number is missing in the progression?'
 
 
 def generate_round():
