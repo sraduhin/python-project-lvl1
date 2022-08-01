@@ -3,6 +3,10 @@ import random
 from brain_games.engine import engine
 
 
+RANDOM_VALUE_LIMITS = (0, 100)
+DESCRIPTION = 'What is the result of the expression?'
+
+
 def get_correct_answer(value1, value2, operation):
     if operation == '+':
         return (value1 + value2)
@@ -14,14 +18,8 @@ def get_correct_answer(value1, value2, operation):
         raise ValueError(f'operation {operation} is not supported')
 
 
-DESCRIPTION = 'What is the result of the expression?'
-
-
 def generate_round():
-
-    RANGE = (0, 100)
-
-    (start, end) = RANGE
+    (start, end) = RANDOM_VALUE_LIMITS
     random_value1 = random.randint(start, end)
     random_value2 = random.randint(start, end)
     random_operator = random.choice(['+', '-', '*'])

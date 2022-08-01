@@ -3,6 +3,10 @@ import random
 from brain_games.engine import engine
 
 
+RANDOM_VALUE_LIMITS = (0, 100)
+DESCRIPTION = 'Answer "yes" if the number is prime, otherwise answer "no".'
+
+
 def is_prime(value):
     if value < 2:
         return False
@@ -12,14 +16,8 @@ def is_prime(value):
     return True
 
 
-DESCRIPTION = 'Answer "yes" if the number is prime, otherwise answer "no".'
-
-
 def generate_round():
-
-    RANGE = (0, 100)
-
-    (start, end) = RANGE
+    (start, end) = RANDOM_VALUE_LIMITS
     question = random.randint(start, end)
     correct_answer = 'yes' if is_prime(question) else 'no'
     return question, correct_answer
